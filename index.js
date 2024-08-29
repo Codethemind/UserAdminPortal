@@ -47,7 +47,6 @@ app.post("/login", async (req, res) => {
       if (passwordMatch) {
         
         req.session.username = check.username;
-        console.log("hello")
         req.session.email = check.email;
         if(check.isAdmin){
           req.session.username=false;
