@@ -1,0 +1,62 @@
+<%- include('./partial/header')-%>
+    <div class="container mt-5">
+        <h2>Add New User</h2>
+        <form action="/admin/adduser" method="post" id="signupid">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="nameid" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="emailid" name="email" required>
+                <p><%= locals.existemail?existemail:null %></p>
+                <p><%= locals.invalidEmail?invalidEmail:null %></p>
+
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="usernameid" name="username" required>
+                <p><%= locals.existuser?existuser:null %></p>
+
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="passwordid" name="password" required>
+            </div>
+            <div id="error" style="color: red;"></div>
+
+          
+            <button type="submit" class="btn btn-primary">Add User</button>
+           
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('signupid').addEventListener('submit', (event) => {
+            var name = document.getElementById('nameid').value.trim();
+            var email = document.getElementById('emailid').value.trim();
+            var username = document.getElementById('usernameid').value.trim();
+            var password = document.getElementById('passwordid').value.trim();
+    
+            // Validate fields are not empty
+            if (name === '' || email === '' || username === '' || password === '') {
+                event.preventDefault();
+                document.getElementById('error').textContent = "Fields cannot be empty or contain only spaces.";
+            } 
+            // Validate email format
+
+            else if (!/^\S+@\S+\.\S+$/.test(email)) {
+    console.log('Invalid email format');
+    event.preventDefault();
+    document.getElementById('error').textContent = "Please enter a valid email address.";
+}
+    
+            // Validate password length
+            else if (password.length < 6) {
+                event.preventDefault();
+                document.getElementById('error').textContent = "Password must be at least 6 characters long.";
+            }
+        });
+    </script>
+
+    <%- include('./partial/footer')-%>

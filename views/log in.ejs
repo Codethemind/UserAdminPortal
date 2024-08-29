@@ -1,0 +1,51 @@
+<%- include('./partial/header')-%>
+  <section class="h-100 gradient-form" style="background-color: #35b167;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+          <div class="card rounded-3 text-black">
+            <div class="row g-0">
+              <div class="col-lg-6">
+                <div class="card-body mx-md-4">
+                  <div class="text-center">
+                    <img src="https://imgs.search.brave.com/NDAk93YcS_vovACT97ADj2Sd74lXIh-yZ604oxsIn3I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzUv/Nzc0LzUzMC9zbWFs/bC9tZW1iZXItbG9n/aW4tZm9ybS1vbi1s/YXB0b3Atc2NyZWVu/LXBuZy5wbmc"
+                      style="width: 110px;" alt="logo">
+                    <h5 class=" text-uppercase mt-1 mb-3 pb-1">CodeTheMind</h5>
+                  </div>
+                  <p class="text-success text-center"><%= locals.alert?alert:null  %> </p>
+
+                  <form action="/login" method="post">
+                    <div class="form-outline mb-4">
+                      <input type="text" name="loginusername" class="form-control" placeholder="Username" required />
+                      <p class="text-danger"><%= locals.notexist?notexist:null  %> </p>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="password" name="loginpassword" class="form-control" placeholder="Password" required />
+                      <p class="text-danger"><%= locals.error?error:null  %> </p>
+                   
+                    </div>
+
+
+                    <div class="text-center pt-1 pb-1">
+                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Login</button>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center pb-4">
+                      <p class="mb-0 me-2">Don't have an account?</p>
+                      <a href="/user/signup" class="btn btn-outline-danger">Sign Up</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                  <h4 class="mb-4">We are more than just a company</h4>
+                  <p class="small mb-0">We believe in continuous effort and hard work as the foundation for growth and improvement. Our philosophy is that success doesn't come from sitting idle but from persistent effort and dedication. With hard work, even the most challenging tasks become manageable, and we strive to better ourselves and our work every day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <%- include('./partial/footer') %>

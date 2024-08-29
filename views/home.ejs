@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            margin: 20px;
+            flex: 1 1 calc(33.333% - 40px); /* 3 cards per row, accounting for margins */
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* space between cards */
+            gap: 20px; /* gap between rows */
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .signout-button {
+            border: none;
+            background-color: #ff4d4d;
+            color: white;
+            font-size: 1.1em;
+            transition: background-color 0.2s;
+        }
+        .signout-button:hover {
+            background-color: #ff1a1a;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mind</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <a href="/user/logout" class="btn signout-button" role="button">Sign Out</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1 class="text-center">Welcome <%=username  %></h1>
+        <!-- <h1 class="text-center">Welcome <%=email%></h1> -->
+        
+        <p class="text-center">Welcome to codethemind. We believe in continuous effort and hard work as the foundation for growth and improvement. Our philosophy is that success doesn't come from sitting idle but from persistent effort and dedication. With hard work, even the most challenging tasks become manageable, and we strive to better ourselves and our work every day.</p>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="https://imgs.search.brave.com/8o-AomDiLQHXUpT_El4rImW9VCqGv_Y4XXXOnsyIwu0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5ubmdyb3VwLmNv/bS9tZWRpYS9lZGl0/b3IvMjAyNC8wNC8x/Ny9kZXNpZ250aGlu/a2luZzEwMS5qcGc" height="500px" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                    <h5 class="card-title">Thinking Cycle</h5>
+                    <p class="card-text">The picture-superiority effect refers to the fact that people tend to remember pictures better than words.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://imgs.search.brave.com/eLKQI4n6AxMFp8OCQ6f1pTdj3kTRidrr6Yo-cb_iC4E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/Mi8xMy8wOC81NC9i/cmFpbi0yMDYyMDU3/XzY0MC5qcGc" height="500px" class="card-img-top" alt="Image 2">
+                <div class="card-body">
+                    <h5 class="card-title">Projective tests</h5>
+                    <p class="card-text">Projective tests employ ambiguous stimuli like enigmatic pictures or inkblots (Rorschach Test).</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
